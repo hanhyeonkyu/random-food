@@ -1,41 +1,5 @@
-import React, { Suspense } from "react";
-
-import { ErrorBoundary } from "react-error-boundary";
-import ErrorFallback from "./ErrorFallback";
-
-function RandomFood({ title }) {
-  return (
-    <fieldset>
-      <h2>{title}</h2>
-      <p>{"food description"}</p>
-    </fieldset>
-  );
-}
-
-export default function RandomFoodWithSuspense() {
-  const [title, setTitle] = React.useState("더집밥");
-  function rndFood() {
-    const rndNum = randint(0, foodList.length - 1);
-    setTitle(foodList[rndNum]);
-  }
-  function randint(x, y) {
-    let rand = Math.random() * (y - x + 1);
-    return Math.floor(rand) + x;
-  }
-  return (
-    <>
-      <h1>식권대장 랜덤음식</h1>
-      <div style={{ margin: 10 }}>
-        <button onClick={rndFood}>랜덤 돌리기</button>
-      </div>
-      <Suspense fallback={<div className="spinner" />}>
-        <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <RandomFood title={title} />
-        </ErrorBoundary>
-      </Suspense>
-    </>
-  );
-}
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const foodList = [
   "금정(문정)",
@@ -86,5 +50,65 @@ const foodList = [
   "포온스 수제버거",
   "호미정",
   "흥도식당",
-  "CAFE하비비"
+  "CAFE하비비",
 ];
+
+function RandomFood({ idx, title }) {
+  return (
+    <fieldset>
+      <p>{`후보 ${idx}`}</p>
+      <h2>{title}</h2>
+      <p></p>
+    </fieldset>
+  );
+}
+
+function randint(x, y) {
+  let rand = Math.random() * (y - x + 1);
+  return Math.floor(rand) + x;
+}
+
+const rnd1 = randint(0, foodList.length - 1);
+const rnd2 = randint(0, foodList.length - 1);
+const rnd3 = randint(0, foodList.length - 1);
+
+function Landing() {
+  const [titles, setTitles] = React.useState([
+    foodList[rnd1],
+    foodList[rnd2],
+    foodList[rnd3],
+  ]);
+  function rndFood() {
+    const rd1 = randint(0, foodList.length - 1);
+    const rd2 = randint(0, foodList.length - 1);
+    const rd3 = randint(0, foodList.length - 1);
+    setTitles([foodList[rd1], foodList[rd2], foodList[rd3]]);
+  }
+
+  return (
+    <>
+      <h1>식권대장 랜덤음식</h1>
+      <div style={{ margin: 10 }}>
+        <button onClick={rndFood}>랜덤 돌리기</button>
+      </div>
+      {titles &&
+        titles.map((row, idx) => {
+          return <RandomFood idx={idx + 1} title={row} />;
+        })}
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route exact path="/random-food">
+            <Landing />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
+}
