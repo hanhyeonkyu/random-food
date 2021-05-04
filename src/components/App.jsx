@@ -68,9 +68,12 @@ function randint(x, y) {
   return Math.floor(rand) + x;
 }
 
-const rnd1 = randint(0, foodList.length - 1);
-const rnd2 = randint(0, foodList.length - 1);
-const rnd3 = randint(0, foodList.length - 1);
+let tmp = foodList;
+const rnd1 = randint(0, tmp.length - 1);
+tmp.splice(rnd1, 1);
+const rnd2 = randint(0, tmp.length - 1);
+tmp.splice(rnd2, 1);
+const rnd3 = randint(0, tmp.length - 1);
 
 function Landing() {
   const [titles, setTitles] = React.useState([
@@ -79,9 +82,12 @@ function Landing() {
     foodList[rnd3],
   ]);
   function rndFood() {
-    const rd1 = randint(0, foodList.length - 1);
-    const rd2 = randint(0, foodList.length - 1);
-    const rd3 = randint(0, foodList.length - 1);
+    let tmp = foodList;
+    const rd1 = randint(0, tmp.length - 1);
+    tmp.splice(rnd1, 1);
+    const rd2 = randint(0, tmp.length - 1);
+    tmp.splice(rnd2, 1);
+    const rd3 = randint(0, tmp.length - 1);
     setTitles([foodList[rd1], foodList[rd2], foodList[rd3]]);
   }
 
