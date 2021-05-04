@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/random-food/static/css/main.14efde1e.chunk.css",
-    "main.js": "/random-food/static/js/main.f4f664ba.chunk.js",
-    "main.js.map": "/random-food/static/js/main.f4f664ba.chunk.js.map",
+    "main.js": "/random-food/static/js/main.3c9d9a06.chunk.js",
+    "main.js.map": "/random-food/static/js/main.3c9d9a06.chunk.js.map",
     "runtime-main.js": "/random-food/static/js/runtime-main.e3a31b5a.js",
     "runtime-main.js.map": "/random-food/static/js/runtime-main.e3a31b5a.js.map",
     "static/js/2.16c69aa8.chunk.js": "/random-food/static/js/2.16c69aa8.chunk.js",
     "static/js/2.16c69aa8.chunk.js.map": "/random-food/static/js/2.16c69aa8.chunk.js.map",
     "index.html": "/random-food/index.html",
-    "precache-manifest.7c80d594f84b63b6b968f167de728f1f.js": "/random-food/precache-manifest.7c80d594f84b63b6b968f167de728f1f.js",
+    "precache-manifest.c0d801a0f5ce82f58a22595786ec90bb.js": "/random-food/precache-manifest.c0d801a0f5ce82f58a22595786ec90bb.js",
     "service-worker.js": "/random-food/service-worker.js",
     "static/css/main.14efde1e.chunk.css.map": "/random-food/static/css/main.14efde1e.chunk.css.map",
     "static/js/2.16c69aa8.chunk.js.LICENSE.txt": "/random-food/static/js/2.16c69aa8.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e3a31b5a.js",
     "static/js/2.16c69aa8.chunk.js",
     "static/css/main.14efde1e.chunk.css",
-    "static/js/main.f4f664ba.chunk.js"
+    "static/js/main.3c9d9a06.chunk.js"
   ]
 }
