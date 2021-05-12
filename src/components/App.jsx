@@ -84,9 +84,9 @@ function Landing() {
   function rndFood() {
     let tmp = foodList;
     const rd1 = randint(0, tmp.length - 1);
-    tmp = [...tmp.slice(0, rn1), ...tmp.slice(rnd1)];
+    tmp = [...tmp.slice(0, rd1), ...tmp.slice(rd1)];
     const rd2 = randint(0, tmp.length - 1);
-    tmp = [...tmp.slice(0, rn2), ...tmp.slice(rnd2)];
+    tmp = [...tmp.slice(0, rd2), ...tmp.slice(rd2)];
     const rd3 = randint(0, tmp.length - 1);
     setTitles([foodList[rd1], foodList[rd2], foodList[rd3]]);
   }
