@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const foodList = [
+  "고추짜장",
   "금정(문정)",
   "남원추어탕(문정)",
   "니트포",
@@ -25,6 +26,7 @@ const foodList = [
   "수유리혼밥왕",
   "순남시래기(문정테라타워점)",
   "슈퍼커피(문정점)",
+  "식스바리스타즈",
   "신기소",
   "신동보성",
   "아리아리국수",
@@ -34,6 +36,7 @@ const foodList = [
   "열둘칼국수",
   "옐로우팟",
   "요기뎅",
+  "요기요(대장포인트 구매 Only)",
   "우주라이크(문정)",
   "육전면사무소(문정점)",
   "이디야커피(문정테라타워점)",
